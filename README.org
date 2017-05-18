@@ -1,0 +1,28 @@
+#+TITLE: CMSC320 Final Project
+#+AUTHOR: Santiago Gepigon III
+#+DATE:
+#+OPTIONS: toc:nil num:nil
+
+[[https://www.cs.umd.edu/class/spring2017/cmsc320/][Instructions and Rubric]]
+
+- Grading
+  - Motivation
+  - Understanding
+  - Other Resources
+  - Prose
+  - Code
+  - Subjective Evaluation
+
+[[https://nbviewer.jupyter.org/url/www.datasciencecourse.org/GIS%2520Tutorial.ipynb][Example tutorial]]
+
+Aspects we need to convey in our tutorial:
+
+- Data Collection
+- Data Processing
+- Exploratory Analysis and Data Visualization
+- Analysis, Hypothesis Testing, and ML
+- Insight & Policy Decision
+
+* Dataset
+
+https://www.kaggle.com/deepmatrix/imdb-5000-movie-dataset
