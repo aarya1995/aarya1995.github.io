@@ -11755,7 +11755,7 @@ div#notebook {
 <h3 id="Motivation">Motivation<a class="anchor-link" href="#Motivation">&#182;</a></h3><p>As a group, we are huge movie fanatics and enjoy great films such as the Godfather, Casablanca, and any Tarantino flick. As data scientists we wanted to dig deeper into the business side of movies and explore the economics behind what makes a successful movie. Basically we wanted to to examine whether there are any trends among films that lead them to become successful at the box office, and whether a film's box office success correlates with its ratings. A useful analysis would help us predict how well a film does at the box office before it screens, without having to rely on critics or our own instinct. Essentially we want to determine if there is a "Hollywood formula" to making a successful movie.</p>
 <h3 id="Background">Background<a class="anchor-link" href="#Background">&#182;</a></h3><p>We found an interesting dataset of more than 5000 data points consisting of 28 attributes describing IMDB movies here: <a href="https://www.kaggle.com/deepmatrix/imdb-5000-movie-dataset">https://www.kaggle.com/deepmatrix/imdb-5000-movie-dataset</a>.</p>
 <p>You can read more about the data set here: <a href="https://blog.nycdatascience.com/student-works/machine-learning/movie-rating-prediction/">https://blog.nycdatascience.com/student-works/machine-learning/movie-rating-prediction/</a>.</p>
-<p>We will be focusing our analysis on domestic gross, which is how much the film earned domestically at the box office during its initial run. This figure is in nominal terms, and will need to be transformed into real terms. Also, this figure exlcludes international earning, as well as revenue from DVD rentals, television runs, etc. We will be focusing our analysis on films produced within the USA only.</p>
+<p>We will be focusing our analysis around domestic gross, which is how much the film earned domestically at the box office during its initial run. This figure is in nominal terms, and will need to be transformed into real terms. Also, this figure exlcludes international earnings, as well as revenue from DVD rentals, television runs, etc. We will be focusing our analysis on films produced within the USA only.</p>
 <h3 id="Original-Problem">Original Problem<a class="anchor-link" href="#Original-Problem">&#182;</a></h3><p>Kaggle user <strong>chuansun76</strong> was trying to solve the following problem:</p>
 <ol>
 <li>Given that thousands of movies were produced each year, is there a better way for us to tell the greatness of movie without relying on critics or our own instincts?</li>
@@ -13135,7 +13135,7 @@ YII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It is interesting to see how there is almost an exponential relationship between a film's imdb score and its box office gross. Let's also create violin plots based on this relationship to better visualize the spread and density of the data distribution.</p>
+<p>It is interesting to see how there is almost a semblance of an exponential relationship between a film's imdb score and its box office gross.</p>
 
 </div>
 </div>
@@ -16843,7 +16843,7 @@ T4EBAAAADO//AwW+uDrScD1FAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Mention analysis of above graphs in at least a paragraph.</p>
+<p>For a lot of the genres, there's a small positive linear relationship between the two. "War" and "History" both have an outlier (perhaps same film?) that skews the line of best fit. It also should be noted that that there's not enough data for the "Short" and "Film-Noir" genres to make a proper analysis. It seems genre is not a good indicator of real domestic gross.</p>
 
 </div>
 </div>
@@ -17039,7 +17039,7 @@ Pulp Fiction  8.9 174790523.0094467
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Add a summarizing note to this analysis</p>
+<p>It is interesting to see how critically acclaimed movies don't necessarily correlate with the highest earning movies. Also amazing to see how movies made in the 1930s and 1940s are some of the highest domestic grossing movies of all time.</p>
 
 </div>
 </div>
@@ -17382,6 +17382,17 @@ By looking at the p-values and using a significance level of 5%, we can see that
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Performing linear regression on ROI yielded strange results. For example some significant variables that stood out for this model were <em>real_budget</em>, and <em>movie_facebook_likes</em>. For <em>real_budget</em>, holding all other predictors constant, a dollar increase leads to over an 18,000% decrease in the ROI of a film. This seems very inaccurate. Also, for every additional <em>movie_facebook_likes</em> a film receives, holding all other predictors constant, leads to a .05% reduction in the film's ROI. This seems very counter-intuitive, because wouldn't a film with more facebook likes lead to more success at the box office?</p>
+<p>In conclusion, performing linear regression on ROI didn't yield the best results and means the model doesn't fit our data very well.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Decision-Trees-and-Cross-Validation">Decision Trees and Cross Validation<a class="anchor-link" href="#Decision-Trees-and-Cross-Validation">&#182;</a></h3>
 </div>
 </div>
@@ -17441,22 +17452,29 @@ By looking at the p-values and using a significance level of 5%, we can see that
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>A very low r-sqared score also means that this model doesn't fit our data very well. All in all, linear regression on real_domestic_gross yielded the most interesting results relatively, while the other models didn't quite fit our data.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="V.-Insight-&amp;-Policy-Decision">V. Insight &amp; Policy Decision<a class="anchor-link" href="#V.-Insight-&amp;-Policy-Decision">&#182;</a></h2>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Our analysis seems to indicate that imdb score correlates positively with a film's real domestic gross at the box office, as well as budget, and cast facebook likes. More research has to be conducted to yield models that fit our data better and predict a film's gross in a more sensible and intuitive way. Some next steps could be to construct a model based on film genre, and see if that impacts a film's gross and ROI, and to what extent. Also, what features do films with a high ROI and gross have in common? All in all, this study shed some interesting light on the economics and patterns behind films produced in the USA.</p>
 
 </div>
 </div>
-</div>
-
 </div>
     </div>
   </div>
